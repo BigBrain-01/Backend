@@ -5,6 +5,13 @@ const questionSchema = new Schema({
         type: String,
         required: true
     },
+    topic:{
+        type:String,
+        required: true
+    },
+    image:{
+        type:String
+    },
     optionA: {
         type: String,
         required: true
@@ -28,7 +35,7 @@ const questionSchema = new Schema({
     markedAnswer: [{
         user:{type: Schema.Types.ObjectId, ref:"User"},
         answered:{type: String}
-    }]
+    }],
 }, { timestamps: true })
 
 export default mongoose.model("Question", questionSchema)
