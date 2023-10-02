@@ -6,8 +6,8 @@ const testSchema = new Schema({
     },
     participants: [{
         user: {
-            type: mongoose.Types.ObjectId,
-            ref: "User"
+            type: String,
+            required: true
         },
         score: {
             type: Number,
@@ -17,7 +17,11 @@ const testSchema = new Schema({
     sections: [{
         type: Schema.Types.ObjectId,
         ref : "Section"
-    }]
+    }],
+    class:{
+        type:String,
+        required:true
+    }
 },{timestamps:true})
 
 export default mongoose.model("Test",testSchema);

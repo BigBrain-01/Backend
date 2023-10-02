@@ -6,6 +6,7 @@ import mongoose from "mongoose"
 import authRoute from "./routes/auth.js"
 import testRoute from './routes/test.js'
 import questionRoute from './routes/question.js'
+import subjectRoute from './routes/subject.js'
 
 const app = express()
 dotenv.config()
@@ -18,6 +19,7 @@ app.use(express.json({limit:"30mb"}))
 app.use('/api/auth',authRoute)
 app.use('/api/test',testRoute)
 app.use('/api/question',questionRoute)
+app.use('/api/subject',subjectRoute)
 
 app.listen(5000,()=>{
     console.log("server running at port 5000")
